@@ -9,7 +9,7 @@ class GiftCardController(object):
 	def handle(self, request):
 		#begin handling gift card requests
 
-def main(main):
+def main(name):
 	request_handler = GiftCardController()
 	request_handler.handle(name)
 
