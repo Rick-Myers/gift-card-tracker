@@ -19,7 +19,7 @@ class GiftCardView(object):
         print("**Gift Card Tracker**")
         for index, value in enumerate(menu, 1):
             print("[" + str(index) + "] " + str(list(value.keys())[0]))
-
+        # Alert the controller to prompt for a menu choice
 
 # testA = GiftCardView()
 # testA.generate_main_menu()
