@@ -8,15 +8,15 @@ class GiftCardController(object):
 		self.model = GiftCardModel()
 		self.view = GiftCardView()
 	
-	def handle(self, request):
-		if request == 'start':
+	def handle(self, request=None):
+		if request is None:
 			menu = self.model.get_main_menu()
 			self.view.generate_main_menu(menu)
 	
 
 def main():
 	request_handler = GiftCardController()
-	request_handler.handle('start')
+	request_handler.handle()
 
 
 if __name__ == "__main__":
