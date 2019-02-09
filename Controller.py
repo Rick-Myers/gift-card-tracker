@@ -1,6 +1,6 @@
-import sys
 from View import GiftCardView
 from Model import GiftCardModel
+
 
 class GiftCardController(object):
 
@@ -9,15 +9,15 @@ class GiftCardController(object):
 		self.view = GiftCardView()
 	
 	def handle(self, request):
-		if (request == 'start'):
-			self.view.generate_main_menu()
-	
-	
+		if request == 'start':
+			menu = self.model.get_main_menu()
+			self.view.generate_main_menu(menu)
 	
 
 def main():
 	request_handler = GiftCardController()
 	request_handler.handle('start')
+
 
 if __name__ == "__main__":
 	main()
