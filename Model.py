@@ -1,15 +1,11 @@
-from View import GiftCardView
-
-
 class GiftCardModel(object):
 
     def __init__(self):
-        self.mainMenu = [
-            {"List Cards": GiftCardView.list_all_cards},
-            {"Add Card": GiftCardView.add_a_card},
-            {"Update Balance": GiftCardView.update_balance},
-            {"Exit": GiftCardView.exit}
-        ]
+        self.mainMenu = ["List Cards", "Add Card", "Update Balance", "Exit"]
+        self.dummyList = {"Subway": 20.00, "Target": 10.00, "Five Guys": 5.34}
 
     def get_main_menu(self):
         return self.mainMenu
+
+    def get_all_cards(self):
+        return self.dummyList

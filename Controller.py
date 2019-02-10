@@ -11,7 +11,16 @@ class GiftCardController(object):
     def handle(self, request=None):
         if request is None:
             menu = self.model.get_main_menu()
-            self.view.generate_main_menu(menu)
+            event = self.view.generate_main_menu(menu)
+            self.view_event(event)
+        elif request == "List Cards":
+            cards = self.model.get_all_cards()
+            self.view.list_all_cards(cards)
+
+    def view_event(self, event):
+        if event == "List Cards":
+            request = event
+            self.handle(request)
 
 
 def main():
