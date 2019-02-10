@@ -1,4 +1,8 @@
+__author__ = "Rick Myers"
+
+
 import os
+
 
 class GiftCardView(object):
 
@@ -30,10 +34,9 @@ class GiftCardView(object):
 
     def menu_choice(self, menu):
         user_choice = self.input_validation("Choose an option: ")
-        while 1 > user_choice > len(menu):
-            user_choice = self.input_validation("Choose an option: ")
+        while 1 > int(user_choice) or int(user_choice) > len(menu):
+            user_choice = self.input_validation("Choose from menu - [1-{}]: ".format(len(menu)))
         return menu[user_choice-1]
-        # print('You chose: {}'.format(user_choice))
 
     def input_validation(self, message):
         while True:
@@ -47,4 +50,4 @@ class GiftCardView(object):
                 break
 
             # testA = GiftCardView()
-# testA.generate_main_menu()
+
