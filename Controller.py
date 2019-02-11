@@ -19,8 +19,15 @@ class GiftCardController(object):
             event = self.view.generate_main_menu(menu)
             self.view_event(event)
         elif request == "List Cards":
-            cards = self.model.get_all_cards()
+            cards = self.model.get_card_list()
             self.view.list_all_cards(cards)
+            # todo after listing the cards, take back to main menu (new method?)
+            menu = self.model.get_main_menu()
+            event = self.view.generate_main_menu(menu)
+            self.view_event(event)
+        elif request == "Add Card":
+            self.model.add_card(self.view.add_a_card()) # todo validate cards for dupes
+            # todo after adding card, take back to main menu
         elif request == "Exit":
             self.view.exit()
             sys.exit()

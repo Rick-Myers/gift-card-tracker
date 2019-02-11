@@ -17,6 +17,9 @@ class GiftCardView(object):
             print(name + ": " + str(formatted_balance))
 
     def add_a_card(self):
+        # prompt for a card
+        # turn user input into 'card,balance' format
+        # return card
         print("add a card")
 
     def update_balance(self):
