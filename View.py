@@ -13,8 +13,11 @@ class GiftCardView(object):
     def list_all_cards(self, cards):
         os.system('cls')
         print("All Cards: ")
-        for card in cards.values():
-            card.print()
+        if len(cards) > 0:
+            for card in cards.values():
+                card.print()
+        else:
+            print("Gift Card queue is empty!")
 
     def add_a_card(self):
         print("**Gift Card Tracker - Add Card**")
@@ -23,11 +26,17 @@ class GiftCardView(object):
         card = GiftCard(card_name, card_balance)
         return card
 
-    def update_balance(self):
-        # find a card to update (search by typing first 3 letters? list all cards and pick index?)
-        # prompt for money spent
-        # update card model
-        print("update balance")
+    def update_balance(self, cards):
+        if len(cards) > 0:
+            x = [y for y in cards.keys()]
+            for index, value in enumerate(x, 1):
+                print("[" + str(index) + "] " + value)
+            card_choice = self.menu_choice(x)
+            money_spent = self.currency_validation("Enter money spent: ")
+            return card_choice, money_spent
+        else:
+            print("You need to add some cards first!")
+            return False
 
     def exit(self):
         print("Exiting")
@@ -51,6 +60,17 @@ class GiftCardView(object):
                 user_input = int(input(message))
             except ValueError:
                 print("Not an integer! Try again.")
+                continue
+            else:
+                return user_input
+                break
+
+    def currency_validation(self, message):
+        while True:
+            try:
+                user_input = float(input(message))
+            except ValueError:
+                print("Not an number! Try again.")
                 continue
             else:
                 return user_input

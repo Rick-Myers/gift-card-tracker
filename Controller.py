@@ -23,6 +23,9 @@ class GiftCardController(object):
         elif request == "Add Card":
             self.model.add_card(self.view.add_a_card())
             self.main_menu()
+        elif request == "Update Balance":
+            self.model.update_balance(self.view.update_balance(self.model.get_card_list()))
+            self.main_menu()
         elif request == "Exit":
             self.view.exit()
             sys.exit()
@@ -33,6 +36,8 @@ class GiftCardController(object):
         elif event == "Exit":
             request = event
         elif event == "Add Card":
+            request = event
+        elif event == "Update Balance":
             request = event
         self.handle(request)
 
