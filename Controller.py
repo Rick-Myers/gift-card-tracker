@@ -15,19 +15,14 @@ class GiftCardController(object):
     def handle(self, request=None):
         # todo just show the main menu at start
         if request is None:
-            menu = self.model.get_main_menu()
-            event = self.view.generate_main_menu(menu)
-            self.view_event(event)
+            self.main_menu()
         elif request == "List Cards":
             cards = self.model.get_card_list()
             self.view.list_all_cards(cards)
-            # todo after listing the cards, take back to main menu (new method?)
-            menu = self.model.get_main_menu()
-            event = self.view.generate_main_menu(menu)
-            self.view_event(event)
+            self.main_menu()
         elif request == "Add Card":
-            self.model.add_card(self.view.add_a_card()) # todo validate cards for dupes
-            # todo after adding card, take back to main menu
+            self.model.add_card(self.view.add_a_card())
+            self.main_menu()
         elif request == "Exit":
             self.view.exit()
             sys.exit()
@@ -37,7 +32,14 @@ class GiftCardController(object):
             request = event
         elif event == "Exit":
             request = event
+        elif event == "Add Card":
+            request = event
         self.handle(request)
+
+    def main_menu(self):
+        menu = self.model.get_main_menu()
+        event = self.view.generate_main_menu(menu)
+        self.view_event(event)
 
 
 def main():

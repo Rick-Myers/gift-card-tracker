@@ -2,6 +2,7 @@ __author__ = "Rick Myers"
 
 
 import os
+from GiftCard import GiftCard
 
 
 class GiftCardView(object):
@@ -12,17 +13,20 @@ class GiftCardView(object):
     def list_all_cards(self, cards):
         os.system('cls')
         print("All Cards: ")
-        for name, balance in cards.items():
-            formatted_balance = '${:,.2f}'.format(balance)
-            print(name + ": " + str(formatted_balance))
+        for card in cards.values():
+            card.print()
 
     def add_a_card(self):
-        # prompt for a card
-        # turn user input into 'card,balance' format
-        # return card
-        print("add a card")
+        print("**Gift Card Tracker - Add Card**")
+        card_name = input("Enter a card name: ")
+        card_balance = input("Enter balance: ")
+        card = GiftCard(card_name, card_balance)
+        return card
 
     def update_balance(self):
+        # find a card to update (search by typing first 3 letters? list all cards and pick index?)
+        # prompt for money spent
+        # update card model
         print("update balance")
 
     def exit(self):
@@ -52,5 +56,4 @@ class GiftCardView(object):
                 return user_input
                 break
 
-            # testA = GiftCardView()
 
