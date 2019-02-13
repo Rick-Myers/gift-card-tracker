@@ -9,7 +9,6 @@ class GiftCardModel(object):
 
     def __init__(self):
         self.mainMenu = ["List Cards", "Add Card", "Delete Card", "Update Balance", "Exit"]
-        # todo rethink data structure? a list of cards to allow dupes?
         self.card_list = {}
         self.filename = 'cards.dat'
         # todo create a helper function for this instead of using the model function
@@ -43,6 +42,12 @@ class GiftCardModel(object):
                 data_file.write("{},{}\n".format(card_name, balance.get_balance()))
 
     def add_card(self, card):
+        count = 0
+        temp = card.get_name()
+        while temp in self.card_list.keys():
+            count = count + 1
+            temp = card.get_name() + "({})".format(str(count))
+        card.name = temp
         self.card_list[card.get_name()] = GiftCard(card.get_name(), card.get_balance())
         self.save_cards()
 
