@@ -8,10 +8,11 @@ from GiftCard import GiftCard
 class GiftCardModel(object):
 
     def __init__(self):
-        self.mainMenu = ["List Cards", "Add Card", "Update Balance", "Exit"]
+        self.mainMenu = ["List Cards", "Add Card", "Delete Card", "Update Balance", "Exit"]
         # todo rethink data structure? a list of cards to allow dupes?
         self.card_list = {}
         self.filename = 'cards.dat'
+        # todo create a helper function for this instead of using the model function
         self.card_list = self.get_card_list()
 
     def get_main_menu(self):
@@ -43,6 +44,10 @@ class GiftCardModel(object):
 
     def add_card(self, card):
         self.card_list[card.get_name()] = GiftCard(card.get_name(), card.get_balance())
+        self.save_cards()
+
+    def delete_card(self, key):
+        del self.card_list[key]
         self.save_cards()
 
 # example of current data structure

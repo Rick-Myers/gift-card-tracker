@@ -31,6 +31,20 @@ class GiftCardView(object):
         card = GiftCard(card_name, card_balance)
         return card
 
+    def delete_a_card(self, cards):
+        if len(cards) > 0:
+            os.system('cls')
+            title = "**Gift Card Tracker - Add Card**"
+            print(title + "\n" + "-" * len(title))
+            x = [y for y in cards.keys()]
+            for index, value in enumerate(x, 1):
+                print("[" + str(index) + "] " + value)
+            card_choice = self.menu_choice(x)
+            return card_choice
+        else:
+            print("You need to add some cards first!")
+            return False
+
     def update_balance(self, cards):
         if len(cards) > 0:
             # todo implement 3 letter search after 10 cards instead of listing all?
