@@ -4,10 +4,7 @@
     <list default="true" id="fbb14246-0f60-4b7a-a6ff-fede1361f4b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GiftCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/GiftCard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View.py" beforeDir="false" afterPath="$PROJECT_DIR$/View.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards.dat" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +19,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+                <state relative-caret-position="493">
+                  <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
                   <folding>
                     <element signature="e#28#57#0" expanded="true" />
-                    <element signature="e#279#1097#0" />
                     <element signature="e#1140#1280#0" />
                     <element signature="e#1320#1435#0" />
                     <element signature="e#1299#1366#0" />
@@ -38,8 +34,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Model.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="389">
-                  <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+                <state relative-caret-position="440">
+                  <caret line="48" column="18" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="18" />
                   <folding>
                     <element signature="e#28#37#0" expanded="true" />
                   </folding>
@@ -54,16 +50,14 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/View.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+                <state relative-caret-position="358">
+                  <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
                   <folding>
                     <element signature="e#28#37#0" expanded="true" />
                     <element signature="e#101#105#0" />
-                    <element signature="e#182#357#0" />
-                    <element signature="e#392#514#0" />
                     <element signature="e#607#623#0" />
-                    <element signature="e#673#872#0" />
                     <element signature="e#1652#1911#0" />
+                    <element signature="e#2068#2327#0" />
                   </folding>
                 </state>
               </provider>
@@ -97,9 +91,9 @@
       <list>
         <option value="$PROJECT_DIR$/savingfetch.py" />
         <option value="$PROJECT_DIR$/Model.py" />
-        <option value="$PROJECT_DIR$/Controller.py" />
         <option value="$PROJECT_DIR$/GiftCard.py" />
         <option value="$PROJECT_DIR$/View.py" />
+        <option value="$PROJECT_DIR$/Controller.py" />
       </list>
     </option>
   </component>
@@ -255,12 +249,12 @@
     <frame x="1912" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599578" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09114858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27420902" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27420902" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -276,16 +270,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/savingfetch.py" />
-    <entry file="file://$PROJECT_DIR$/Model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-          <folding>
-            <element signature="e#28#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GiftCard.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -293,32 +277,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller.py">
+    <entry file="file://$PROJECT_DIR$/View.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="358">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding>
-            <element signature="e#28#57#0" expanded="true" />
-            <element signature="e#279#1097#0" />
-            <element signature="e#1140#1280#0" />
-            <element signature="e#1320#1435#0" />
-            <element signature="e#1299#1366#0" />
+            <element signature="e#28#37#0" expanded="true" />
+            <element signature="e#101#105#0" />
+            <element signature="e#607#623#0" />
+            <element signature="e#1652#1911#0" />
+            <element signature="e#2068#2327#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View.py">
+    <entry file="file://$PROJECT_DIR$/Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="34" column="50" lean-forward="true" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state relative-caret-position="440">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="18" />
           <folding>
             <element signature="e#28#37#0" expanded="true" />
-            <element signature="e#101#105#0" />
-            <element signature="e#182#357#0" />
-            <element signature="e#392#514#0" />
-            <element signature="e#607#623#0" />
-            <element signature="e#673#872#0" />
-            <element signature="e#1652#1911#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#28#57#0" expanded="true" />
+            <element signature="e#1140#1280#0" />
+            <element signature="e#1320#1435#0" />
+            <element signature="e#1299#1366#0" />
           </folding>
         </state>
       </provider>

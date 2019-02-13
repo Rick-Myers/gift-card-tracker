@@ -12,7 +12,8 @@ class GiftCardView(object):
 
     def list_all_cards(self, cards):
         os.system('cls')
-        print("All Cards: ")
+        title = "**Gift Card Tracker - All Cards**"
+        print(title + "\n" + "-" * len(title))
         if len(cards) > 0:
             for card in cards.values():
                 card.print()
@@ -20,7 +21,9 @@ class GiftCardView(object):
             print("Gift Card queue is empty!")
 
     def add_a_card(self):
-        print("**Gift Card Tracker - Add Card**")
+        os.system('cls')
+        title = "**Gift Card Tracker - Add Card**"
+        print(title + "\n" + "-" * len(title))
         card_name = input("Enter a card name: ")
         card_balance = input("Enter balance: ")
         card = GiftCard(card_name, card_balance)
@@ -28,6 +31,9 @@ class GiftCardView(object):
 
     def update_balance(self, cards):
         if len(cards) > 0:
+            os.system('cls')
+            title = "**Gift Card Tracker - Update balance**"
+            print(title + "\n" + "-" * len(title))
             x = [y for y in cards.keys()]
             for index, value in enumerate(x, 1):
                 print("[" + str(index) + "] " + value)
@@ -42,7 +48,8 @@ class GiftCardView(object):
         print("Exiting")
 
     def generate_main_menu(self, menu):
-        print("**Gift Card Tracker**")
+        title = "**Gift Card Tracker - Main Menu**"
+        print("\n" + title + "\n" + "-" * len(title))
         for index, value in enumerate(menu, 1):
             print("[" + str(index) + "] " + value)
         view_event = self.menu_choice(menu)

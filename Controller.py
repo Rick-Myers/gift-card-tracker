@@ -27,6 +27,7 @@ class GiftCardController(object):
             self.model.update_balance(self.view.update_balance(self.model.get_card_list()))
             self.main_menu()
         elif request == "Exit":
+            self.model.save_cards()
             self.view.exit()
             sys.exit()
 
