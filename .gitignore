@@ -117,4 +117,5 @@ dmypy.json
 
 # Persistence
 cards.dat
+.idea/
 .idea/workspace.xml
