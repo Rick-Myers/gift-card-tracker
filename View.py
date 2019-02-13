@@ -50,6 +50,7 @@ class GiftCardView(object):
 
     def exit(self):
         print("Exiting")
+        os.system('cls')
 
     def generate_main_menu(self, menu):
         title = "**Gift Card Tracker - Main Menu**"
