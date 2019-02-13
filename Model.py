@@ -17,16 +17,6 @@ class GiftCardModel(object):
     def get_main_menu(self):
         return self.mainMenu
 
-    def _get_append_write(self):
-        if os.path.exists(self.filename):
-            return 'a'
-        return 'w'
-
-    def _get_read_write(self):
-        if os.path.exists(self.filename):
-            return 'r'
-        return 'w'
-
     def update_balance(self, x):
         if x is not False:
             self.card_list[x[0]].update_balance(x[1])
@@ -54,14 +44,6 @@ class GiftCardModel(object):
     def add_card(self, card):
         self.card_list[card.get_name()] = GiftCard(card.get_name(), card.get_balance())
         self.save_cards()
-    # todo validate cards for any add failures and re-prompt through controller.
 
 # example of current data structure
 # self.card_list = {"Subway": GiftCard("Subway", 20.00)}
-
-
-#Check if the current card list is empty or not.
-    #if its empty, then we need to read from a file
-        #check if a file exists
-            #if the file exists, read in the contents
-            #if it doesn't exist, create an empty file and make sure card list is set to empty dict

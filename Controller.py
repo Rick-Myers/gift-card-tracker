@@ -11,36 +11,35 @@ class GiftCardController(object):
     def __init__(self):
         self.model = GiftCardModel()
         self.view = GiftCardView()
+        self.requests = {"List Cards": self._list_cards_request,
+                         "Add Card": self._add_card_request,
+                         "Update Balance": self._update_balance_request,
+                         "Exit": self._exit_request}
+
+    def _list_cards_request(self):
+        cards = self.model.get_card_list()
+        self.view.list_all_cards(cards)
+
+    def _add_card_request(self):
+        self.model.add_card(self.view.add_a_card())
+
+    def _update_balance_request(self):
+        self.model.update_balance(self.view.update_balance(self.model.get_card_list()))
+
+    def _exit_request(self):
+        self.model.save_cards()
+        self.view.exit()
+        sys.exit()
 
     def handle(self, request=None):
-        # todo just show the main menu at start
         if request is None:
             self.main_menu()
-        elif request == "List Cards":
-            cards = self.model.get_card_list()
-            self.view.list_all_cards(cards)
-            self.main_menu()
-        elif request == "Add Card":
-            self.model.add_card(self.view.add_a_card())
-            self.main_menu()
-        elif request == "Update Balance":
-            self.model.update_balance(self.view.update_balance(self.model.get_card_list()))
-            self.main_menu()
-        elif request == "Exit":
-            self.model.save_cards()
-            self.view.exit()
-            sys.exit()
+        else:
+            self.requests[request]()
+        self.main_menu()
 
     def view_event(self, event):
-        if event == "List Cards":
-            request = event
-        elif event == "Exit":
-            request = event
-        elif event == "Add Card":
-            request = event
-        elif event == "Update Balance":
-            request = event
-        self.handle(request)
+        self.handle(event)
 
     def main_menu(self):
         menu = self.model.get_main_menu()
