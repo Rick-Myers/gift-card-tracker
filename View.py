@@ -6,11 +6,17 @@ from GiftCard import GiftCard
 
 
 class GiftCardView(object):
+    """The GiftCardView is responsible for displaying the data that is held
+       in the GiftCardModel. This was a first attempt at following the MVC
+       model. The view will do some processing by taking user input throughout
+       the app and validating it before sending it back to the GiftCardModel."""
 
     def __init__(self):
         pass
 
-    def list_all_cards(self, cards):
+    @staticmethod
+    def list_all_cards(cards):
+        """Takes a list of GiftCards and displays them to the screen."""
         os.system('cls')
         title = "**Gift Card Tracker - All Cards**"
         print(title + "\n" + "-" * len(title))
@@ -21,6 +27,8 @@ class GiftCardView(object):
             print("Gift Card queue is empty!")
 
     def add_a_card(self):
+        """Prompts the user for a GiftCard() to be added to the list.
+           Returns a card to be added to the GiftCardModel."""
         os.system('cls')
         title = "**Gift Card Tracker - Add Card**"
         print(title + "\n" + "-" * len(title))
@@ -32,22 +40,27 @@ class GiftCardView(object):
         return card
 
     def delete_a_card(self, cards):
+        """Prompts the user to delete a card from the gift card list.
+           The card that is chosen is deleted. If this option is chosen,
+           a card must be delete."""
         if len(cards) > 0:
             os.system('cls')
-            title = "**Gift Card Tracker - Add Card**"
+            title = "**Gift Card Tracker - Delete Card**"
             print(title + "\n" + "-" * len(title))
-            x = [y for y in cards.keys()]
-            for index, value in enumerate(x, 1):
+            card_names = [y for y in cards.keys()]
+            for index, value in enumerate(card_names, 1):
                 print("[" + str(index) + "] " + value)
-            card_choice = self.menu_choice(x)
+            card_choice = self.menu_choice(card_names)
             return card_choice
         else:
             print("You need to add some cards first!")
             return False
 
     def update_balance(self, cards):
+        """Prompts the user for a card and then passes that card back to
+           the GiftCardModel with the amount of money spent. The model will
+           then deduct the money spent from the card and update the model."""
         if len(cards) > 0:
-            # todo implement 3 letter search after 10 cards instead of listing all?
             title = "**Gift Card Tracker - Update balance**"
             print(title + "\n" + "-" * len(title))
             x = [y for y in cards.keys()]
@@ -62,11 +75,13 @@ class GiftCardView(object):
             print("You need to add some cards first!")
             return False
 
-    def exit(self):
+    @staticmethod
+    def exit():
         print("Exiting")
         os.system('cls')
 
     def generate_main_menu(self, menu):
+        """Prints the Main Menu. Returns the user's choice."""
         title = "**Gift Card Tracker - Main Menu**"
         print("\n" + title + "\n" + "-" * len(title))
         for index, value in enumerate(menu, 1):
@@ -75,6 +90,9 @@ class GiftCardView(object):
         return view_event
 
     def menu_choice(self, menu):
+        """Validates menu choices to insure and integer is entered
+           and that integer is between the range of the menu list.
+           It then returns the user choice as a string."""
         user_choice = self.input_validation("Choose an option: ",
                                             self._int_input,
                                             "Not an integer! Try again.")
@@ -84,7 +102,10 @@ class GiftCardView(object):
                                                 "Not an integer! Try again.")
         return menu[user_choice-1]
 
-    def input_validation(self, message, type_check, error):
+    @staticmethod
+    def input_validation(message, type_check, error):
+        """Helper function that can validate both float and int based
+           user inputs. It returns clean user input as user_input."""
         while True:
             try:
                 user_input = type_check(message)
@@ -95,13 +116,19 @@ class GiftCardView(object):
                 return user_input
                 break
 
-    def _float_input(self, message):
+    @staticmethod
+    def _float_input(message):
+        """Validates input to be sure its a float."""
         return float(input(message))
 
-    def _int_input(self, message):
+    @staticmethod
+    def _int_input(message):
+        """Validates input to be sure its an int."""
         return int(input(message))
 
-    def _not_empty(self):
+    @staticmethod
+    def _not_empty():
+        """Validates input to be sure something was actually entered."""
         while True:
             try:
                 user_input = input("Enter a card name: ")
