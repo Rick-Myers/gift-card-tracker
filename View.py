@@ -114,7 +114,6 @@ class GiftCardView(object):
                 continue
             else:
                 return user_input
-                break
 
     @staticmethod
     def _float_input(message):
@@ -137,6 +136,6 @@ class GiftCardView(object):
                 continue
             else:
                 return user_input
-                break
+
 
 
