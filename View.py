@@ -24,6 +24,7 @@ class GiftCardView(object):
             for card in cards.values():
                 card.print()
         else:
+            os.system('cls')
             print("Gift Card queue is empty!")
 
     def add_a_card(self):
@@ -53,6 +54,7 @@ class GiftCardView(object):
             card_choice = self.menu_choice(card_names)
             return card_choice
         else:
+            os.system('cls')
             print("You need to add some cards first!")
             return False
 
@@ -72,6 +74,7 @@ class GiftCardView(object):
                                                 "Not an number! Try again.")
             return card_choice, money_spent
         else:
+            os.system('cls')
             print("You need to add some cards first!")
             return False
 
